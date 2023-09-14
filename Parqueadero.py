@@ -77,7 +77,7 @@ lblTelefono.grid(row=2,column=0,padx=10, pady=20)
 txtTelefono=Entry(frame1, width=20, font=('Arial',12))
 txtTelefono.grid(row=2,column=1)
 
-btnAgregar=Button(frame1,width=20,font=('Arial',12,'bold'),text='Agregar', 
+btnAgregar=Button(frame1,width=20,font=('Arial',12,'bold'),text='Ingresar vehiculo', 
                   bg='orange',bd=5,command=agregar_vehiculo)
 btnAgregar.grid(row=5,columnspan=2,padx=10,pady=20)
 
@@ -86,7 +86,7 @@ btnSacar = Button(frame1, width=20, font=('Arial', 12, 'bold'), text='Sacar Vehi
 btnSacar.grid(row=6, columnspan=2, padx=10, pady=20)
 
 #Elementos del Frame2
-lblArchivo=Label(frame2,text='Contenido',width=25,bg='gray16',
+lblArchivo=Label(frame2,text='Vehiculos Ingresados',width=25,bg='gray16',
                  font=('Arial',12,'bold'),fg='white')
 lblArchivo.grid(row=0,column=0,padx=10,pady=10)
 
@@ -101,7 +101,7 @@ tabla.heading('#0', text='Matricula', anchor='center')
 tabla.heading('Propietario', text='Propietario', anchor='center')
 tabla.heading('Telefono', text='Telefono', anchor='center')
 
-btnGuardar=Button(frame2,width=20,font=('Arial',12,'bold'),text='Mostrar',bg='green2',bd=5,command=mostrar_datos)
+btnGuardar=Button(frame2,width=20,font=('Arial',12,'bold'),text='Mostrar Info',bg='green2',bd=5,command=mostrar_datos)
 btnGuardar.grid(row=2,column=0,padx=10,pady=10)
 
 
