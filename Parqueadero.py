@@ -37,6 +37,7 @@ def sacar_vehiculo():
         del Propietario[indice]
         del telefono[indice]
 
+    messagebox.showinfo("Sacado","Se ha sacado con exito el vehiculo...")
     # Limpiar los campos de entrada
     limpiar()
 

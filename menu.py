@@ -45,8 +45,7 @@ def BuscarResp():
 def modifResp():
     doc = docV.get
     responsable = namedtuple("Modificar", "documento nombres apellidos celular correo")
-    for i in lista:
-        if i 
+    
         
 
 def salir():
