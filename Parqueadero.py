@@ -15,7 +15,7 @@ def agregar_vehiculo():
     Matricula.append(txtMatricula.get().upper())
     Propietario.append(txtPropietario.get())
     telefono.append(txtTelefono.get())
-    messagebox.showinfo
+    messagebox.showinfo("ingresado", "Se ha ingresado correctamente el vehiculo...")
     limpiar()
 
 def sacar_vehiculo():
