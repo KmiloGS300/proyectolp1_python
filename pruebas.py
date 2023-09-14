@@ -70,7 +70,7 @@ def mostrar_datos():
 #Funciones de las opciones del menú
 def disponibilidad():
     global espacios_coches, espacios_motocicletas
-    mensaje = f"Disponibilidad de espacios:\n\nCoches: {espacios_coches}/10\nMotocicletas: {espacios_motocicletas}/30"
+    mensaje = f"Disponibilidad de espacios:\n\n\nCoches: {espacios_coches}/10\n\nMotocicletas: {espacios_motocicletas}/30"
     messagebox.showinfo("Disponibilidad", mensaje)
 
 def salir():
