@@ -42,7 +42,9 @@ def Adicionar_producto(Nombre_producto, Precio_producto):
 def Adicionar_varios(Nombre_producto, Precio_producto):
     producto_nuevo = input("ingrese un produto para agregar a la vitrina = ")
     precio_nuevo = input("ingrese el precio del producto = ")
-
+    Nuevos_productos.append(producto_nuevo)
+    Nuevos_precios.append(precio_nuevo)
+    
     Nuevos_productos = []
     Nuevos_precios = []
 
