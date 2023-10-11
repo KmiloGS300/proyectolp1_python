@@ -1,8 +1,12 @@
 import os
 
 #Listas Principales
-Nombre_producto = ["Doritos", "Margarita - Limon", "margarita - Pollo", "Trocipollos"]
-Precio_producto = [2000,2500,2500,1000]
+Nombre_producto = ["Doritos", "Lays", "Trocipollos", "Choclitos"]
+Precio_producto = [2000,2500,1400,1000]
+
+#Para cuando desea aregar mas d e1 producto
+Nuevos_productos = []
+Nuevos_precios = []
 
 #Listas para la copia del inventarii
 copia_productos = []
@@ -13,22 +17,33 @@ def Comprar_producto(Nombre_producto, Precio_producto):
     print(Nombre_producto)
     print("_____________________________________________________________________________________________________________________________________________________________________________")
     print(Precio_producto)
-    print (" ")
+    print(" ")
     
-    producto = input("Qué producto quiere Comprar? = ")
+    productos_seleccionados = []  # Lista para almacenar los precios de los productos seleccionados
     
-    if producto in Nombre_producto:
-        pos_producto = Nombre_producto.index(producto)
-        precio = Precio_producto[pos_producto]
-        print(f"El precio del producto {producto} es: ${precio}")
+    while True:
+        print(" ")
+        producto = input("\033[37m""Qué producto quiere Comprar? "+"\033[31m"+"\n(ingrese 1 para finalizar la compra) = ")
         
-        Nombre_producto.remove(producto)
-        Precio_producto.pop(pos_producto)
+        if producto == '1':
+            break
         
-        total_pagar = sum(Precio_producto)
-        print(f"Total a pagar: {total_pagar}")
-    else:
-        print("Producto no encontrado")
+        if producto in Nombre_producto:
+            pos_producto = Nombre_producto.index(producto)
+            precio = Precio_producto[pos_producto]
+            print(" ")
+            print(f"El precio del producto {producto} es: ${precio}")
+            
+            productos_seleccionados.append(precio)  # Agregar el precio del producto seleccionado
+            
+            Nombre_producto.pop(pos_producto)
+            Precio_producto.pop(pos_producto)
+        else:
+            print("Producto no encontrado")
+    
+    print(" ")
+    total_pagar = sum(productos_seleccionados)
+    print(f"Total a pagar: {total_pagar}")
 
 
 def Adicionar_producto(Nombre_producto, Precio_producto):
@@ -40,16 +55,21 @@ def Adicionar_producto(Nombre_producto, Precio_producto):
 
 
 def Adicionar_varios(Nombre_producto, Precio_producto):
-    producto_nuevo = input("ingrese un produto para agregar a la vitrina = ")
-    precio_nuevo = input("ingrese el precio del producto = ")
-    Nuevos_productos.append(producto_nuevo)
-    Nuevos_precios.append(precio_nuevo)
+    while True:
+        producto_nuevo = input("\033[37m""Ingrese un producto para agregar a la vitrina "+"\033[31m"+"\n(Ingrese 1 para salir) = ")
+        if producto_nuevo == "1":
+            break
+        else:
+            precio_nuevo = input(f"Ingrese el precio para {producto_nuevo}: ")
+            Nuevos_productos.append(producto_nuevo)
+            Nuevos_precios.append(precio_nuevo)
     
-    Nuevos_productos = []
-    Nuevos_precios = []
-
-    Nombre_producto.extend(Nuevos_productos)
-    Precio_producto.extend(Nuevos_precios)
+    print(" ")
+    opcion = input(f"Ingrese 1 si desea añadir todos estos productos: {Nuevos_productos} = ")
+    
+    if opcion == "1":
+        Nombre_producto.extend(Nuevos_productos)
+        Precio_producto.extend(Nuevos_precios)
 
     print(Nombre_producto)
     print(Precio_producto)
@@ -86,12 +106,12 @@ def Copia_productos(Nombre_producto, Precio_producto):
     print(copia_precios)
 
 
-def Ordenar_productos(copia_productos, copia_precios):  
+def Ordenar_productos(Nombre_producto, Precio_producto, copia_productos, copia_precios):  
     copia_productos.sort()
-    print(copia_productos)
+    print(Nombre_producto)
 
     copia_precios.sort()
-    print(copia_precios)
+    print(Precio_producto)
 
 
 def Eliminar_copia(Nombre_producto, Precio_producto, copia_productos, copia_precios):
